@@ -1,0 +1,134 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Lane {
+  id: Int!
+  identifier: Int!
+  tournament: Tournament
+  tournaments: [Tournament!]!
+  league: League
+  teams: [Team!]!
+  players: [Player!]!
+  team: Team
+  member: Member
+}
+
+type League {
+  id: Int!
+  name: String!
+  tournaments: [Tournament!]!
+  league: League
+  teams: [Team!]!
+  tournament: Tournament
+  players: [Player!]!
+}
+
+type Member {
+  id: Int!
+  identityKey: String!
+  name: String!
+  tournaments: [Tournament!]!
+  league: League
+  teams: [Team!]!
+  tournament: Tournament
+  players: [Player!]!
+}
+
+type Mutation {
+  createLeague(name: String!): League!
+  players: [Player!]!
+}
+
+type Player {
+  id: Int!
+  teamID: Int!
+  team: Team
+  memberID: Int!
+  member: Member
+  scores: [Score!]!
+  tournaments: [Tournament!]!
+  league: League
+  teams: [Team!]!
+  tournament: Tournament
+  players: [Player!]!
+}
+
+type Query {
+  leagues: [League!]!
+  tournaments: [Tournament!]!
+  teams: [Team!]!
+  members: [Member!]!
+  players: [Player!]!
+  reservations: [Reservation!]!
+  lanes: [Lane!]!
+  scores: [Score!]!
+  sets: [Set!]!
+}
+
+type Reservation {
+  id: Int!
+  startTime: DateTime!
+  endTime: DateTime!
+  tournament: Tournament
+  tournaments: [Tournament!]!
+  league: League
+  teams: [Team!]!
+  players: [Player!]!
+  team: Team
+  member: Member
+}
+
+type Score {
+  id: Int!
+  player: Player!
+  points: Int!
+  set: Set
+  tournaments: [Tournament!]!
+  league: League
+  teams: [Team!]!
+  tournament: Tournament
+  players: [Player!]!
+  team: Team
+  member: Member
+}
+
+type Set {
+  id: Int!
+  ordinal: Int!
+  tournament: Tournament
+  scores: [Score!]!
+  tournaments: [Tournament!]!
+  league: League
+  teams: [Team!]!
+  players: [Player!]!
+  team: Team
+  member: Member
+}
+
+type Team {
+  id: Int!
+  name: String!
+  tournamentID: Int!
+  tournament: Tournament
+  players: [Player!]!
+}
+
+type Tournament {
+  id: Int!
+  name: String!
+  league: League
+  laneID: Int!
+  lane: Lane!
+  teams: [Team!]!
+  sets: [Set!]!
+  players: [Player!]!
+  tournament: Tournament
+}
+
+"The `@specifiedBy` directive is used within the type system definition language to provide a URL for specifying the behavior of custom scalar definitions."
+directive @specifiedBy("The specifiedBy URL points to a human-readable specification. This field will only read a result for scalar types." url: String!) on SCALAR
+
+"The `DateTime` scalar represents an ISO-8601 compliant date time type."
+scalar DateTime @specifiedBy(url: "https:\/\/www.graphql-scalars.com\/date-time")

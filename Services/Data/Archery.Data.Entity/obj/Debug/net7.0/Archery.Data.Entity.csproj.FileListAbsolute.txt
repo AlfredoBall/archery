@@ -1,0 +1,14 @@
+C:\repos\archery\Services\Data\Archery.Data.Entity\bin\Debug\net7.0\Archery.Data.Entity.deps.json
+C:\repos\archery\Services\Data\Archery.Data.Entity\bin\Debug\net7.0\Archery.Data.Entity.dll
+C:\repos\archery\Services\Data\Archery.Data.Entity\bin\Debug\net7.0\Archery.Data.Entity.pdb
+C:\repos\archery\Services\Data\Archery.Data.Entity\obj\Debug\net7.0\Archery.Data.Entity.csproj.AssemblyReference.cache
+C:\repos\archery\Services\Data\Archery.Data.Entity\obj\Debug\net7.0\Archery.Data.Entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\repos\archery\Services\Data\Archery.Data.Entity\obj\Debug\net7.0\Archery.Data.Entity.AssemblyInfoInputs.cache
+C:\repos\archery\Services\Data\Archery.Data.Entity\obj\Debug\net7.0\Archery.Data.Entity.AssemblyInfo.cs
+C:\repos\archery\Services\Data\Archery.Data.Entity\obj\Debug\net7.0\Archery.Data.Entity.csproj.CoreCompileInputs.cache
+C:\repos\archery\Services\Data\Archery.Data.Entity\obj\Debug\net7.0\Archery.Data.Entity.dll
+C:\repos\archery\Services\Data\Archery.Data.Entity\obj\Debug\net7.0\refint\Archery.Data.Entity.dll
+C:\repos\archery\Services\Data\Archery.Data.Entity\obj\Debug\net7.0\Archery.Data.Entity.pdb
+C:\repos\archery\Services\Data\Archery.Data.Entity\obj\Debug\net7.0\ref\Archery.Data.Entity.dll
+C:\repos\archery\Services\Data\Archery.Data.Entity\bin\Debug\net7.0\Archery.Data.Entity.runtimeconfig.json
+C:\repos\archery\Services\Data\Archery.Data.Entity\obj\Debug\net7.0\Archery.Data.Entity.genruntimeconfig.cache
