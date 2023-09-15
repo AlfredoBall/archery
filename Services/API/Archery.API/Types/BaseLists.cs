@@ -8,7 +8,9 @@ namespace Archery.API.Types
     {
         public async Task<List<League>> Leagues([Service] IMapper mapper, [Service] Context context)
         {
-            return await mapper.ProjectTo<League>(context.Leagues).ToListAsync();
+            var result = await mapper.ProjectTo<League>(context.Leagues).ToListAsync();
+
+            return result;
         }
 
         public async Task<List<Tournament>> Tournaments([Service] IMapper mapper, [Service] Context context)

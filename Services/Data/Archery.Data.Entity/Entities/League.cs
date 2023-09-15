@@ -3,6 +3,6 @@
 public class League
 {
     public int ID { get; set; }
-    public string Name { get; init; }
+    public string Name { get; set; }
     public IList<Tournament> Tournaments { get; set; } = new List<Tournament>();
 }

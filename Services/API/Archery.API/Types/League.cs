@@ -1,6 +1,8 @@
 ﻿using Archery.API.Attributes;
 using Archery.Data.Entity;
 using AutoMapper;
+using GreenDonut;
+using HotChocolate.Execution;
 using Microsoft.EntityFrameworkCore;
 
 namespace Archery.API.Types
@@ -13,6 +15,36 @@ namespace Archery.API.Types
         #region Mutations
 
         [GraphQLIgnore]
+        public async Task<League?> UpdateLeague([Service] IMapper mapper, Context context, int id, string name)
+        {
+            throw new GraphQLException(
+                    ErrorBuilder
+                    .New()
+                    .SetMessage("League does not exist")
+                    .SetCode("League does not exist")
+                    .Build());
+
+            try
+            {
+                var existingLeague = await context.Leagues.SingleAsync(l => l.ID == id);
+
+                existingLeague.Name = name;
+
+                context.SaveChanges();
+
+                return mapper.Map<AE.League, League>(existingLeague);
+            }
+            catch (Exception ex)
+            {
+                throw new GraphQLException(
+                    ErrorBuilder
+                    .New()
+                    .SetMessage("League does not exist")
+                    .Build());
+            }
+        }
+
+        [GraphQLIgnore]
         public async Task<League> CreateLeague([Service] IMapper mapper, Context context, string name)
         {
             var result = await context.Leagues.AddAsync(new AE.League() { Name = name });
@@ -20,6 +52,8 @@ namespace Archery.API.Types
             try
             {
                 await context.SaveChangesAsync();
+
+                return mapper.Map<AE.League, League>(result.Entity);
             }
             catch (Exception ex)
             {
@@ -30,8 +64,6 @@ namespace Archery.API.Types
                     .Build());
 
             }
-
-            return mapper.Map<AE.League, League>(result.Entity);
         }
 
         #endregion

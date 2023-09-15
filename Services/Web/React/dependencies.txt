@@ -1,0 +1,14 @@
+next@latest
+react@latest
+react-dom@latest
+@types/node
+@types/react 
+typescript
+@mui/material
+@emotion/react
+@emotion/styled
+@mui/icons-material
+@graphql-codegen/cli
+react-hook-form
+graphql-request
+@material-ui/core

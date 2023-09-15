@@ -1,0 +1,12 @@
+query getLeagues {
+  leagues {
+    name,
+    id
+  }
+}
+
+query getTournaments {
+  tournaments {
+    name
+  }
+}

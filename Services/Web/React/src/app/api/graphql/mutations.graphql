@@ -1,0 +1,21 @@
+query getLeagues {
+  leagues {
+    name,
+    id
+  }
+}
+
+query getTournaments {
+  tournaments {
+    name
+  }
+}
+
+mutation updateLeague($input: UpdateLeagueInput!) {
+  updateLeague(input: $input)
+  {
+    league {
+      name, id
+    }
+  }
+}
